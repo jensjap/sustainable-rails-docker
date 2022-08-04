@@ -63,7 +63,7 @@ services:
     # titled "Environment Variables", you
     # can see the default values for
     # connecting to postgres.
-    image: postgres:12
+    image: postgres:13.7
     # In Postgres 12, there is no default value for the password.
     # Since we're using this for dev, we need to set it
     # and it doesn't matter if it's 'secure', so we'll use
@@ -74,5 +74,5 @@ services:
   # until we start talking about background jobs.  Like the
   # Postgres block above, this starts up a Redis server using 5.x.x
   redis:
-    image: redis:5
+    image: redis:6.2.7
 # vim: ft=yaml nospell

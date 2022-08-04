@@ -10,11 +10,11 @@ LOCAL_PORT=9999
 # of the image that's built by this repo
 #
 # Set this to your account name on Docker Hub (required)
-ACCOUNT=your-account
+ACCOUNT=jjap
 # Set this to the repo name on Docker Hub (required)
-REPO=rails-dev-environment
+REPO=rails-dev-environment-widget
 # Set this to the tag name to use (required)
-TAG=some-tag
+TAG=version-0.0.2
 
 # Set this to the directory inside the Docker image you want to mirror
 # your project's root directory

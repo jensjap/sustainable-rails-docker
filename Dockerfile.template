@@ -1,6 +1,6 @@
 # This line says which base image we are building off of.
 # In this case, it's an Ubuntu 20.04 image running Linux
-FROM amd64/ubuntu:20.04
+FROM amd64/ubuntu:22.04
 
 # This sets the environment variable DEBIAN_FRONTEND that
 # all subsequent commands will see in their environments.
@@ -51,7 +51,7 @@ RUN apt-get update -q && apt-get install -qy \
                             zlib1g-dev
 
 # In order to use Postgres 12, we have to add their package repo to install it from there.
-RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |tee  /etc/apt/sources.list.d/pgdg.list && apt-get update && apt-get install -y postgresql-client-12
+RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |tee  /etc/apt/sources.list.d/pgdg.list && apt-get update && apt-get install -y postgresql-client-13
 
 
 # Here, we set up NodeJS, per their instructions. Yes, piping
@@ -88,7 +88,7 @@ RUN wget -O ruby-install-${ruby_installer_version}.tar.gz https://github.com/pos
 # This is a separate run command because we might
 # want to change Ruby versions locally, but we *don't* what to have
 # to re-download and install ruby-install if we can help it.
-RUN ruby-install --system ruby 3.0.2
+RUN ruby-install --system ruby 3.1.0
 
 # OMG SO. MANY. DEPRECATION. WARNINGS. I. DO. NOT. CARE.
 ENV RUBYOPT=-W:no-deprecated
