@@ -1,0 +1,3 @@
+[submodule "hive/widgets"]
+	path = hive/widgets
+	url = https://github.com/jensjap/sustainable-rails-docker_widgets
